@@ -1,0 +1,9 @@
+查看linux下的opencv安装版本：
+pkg-config --modversion opencv
+
+查看linux下的opencv安装库：
+pkg-config --libs opencv
+
+查看linux下的opencv安装路径，并将结果存在 /home/ubuntu/Desktop/opencv_find.txt的文件中：
+sudo find / -iname "*3:1.3.3-dmo1*" > /home/jerry/3:1.3.3-dmo1_find.txt
+

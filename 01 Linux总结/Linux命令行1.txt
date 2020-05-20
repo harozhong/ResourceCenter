@@ -1,0 +1,318 @@
+在linux虚拟机中挂载共享windows中的文件夹：
+sudo mount -t vboxsf ShareFiles /mnt/Windows_Share/
+（ShareFiles 为虚拟机中创建的共享文件名称，/mnt/Windows_Share/为挂载点）
+
+[笔记]Linux命令行大全 
+https://www.cnblogs.com/everfight/p/linux_note.html
+	（1）
+date 显示当前时间和日期
+cal 显示当前月份的日历
+df  查看磁盘剩余空间的数量
+free 显示空闲内存的数量
+pwd 打印当前工作目录
+cd 切换目录
+ls 列出文件夹内容
+
+	（2）
+绝对路径：开始于根目录
+相对路径：开始于工作目录  .工作目录  ..工作目录的父目录
+
+	（3）
+cd - 更改目录到先前的工作目录
+cd ~ 切换到家目录
+
+	（4）
+ls 
+-l 结果以长模式输出 
+-t 选项按文件的修改时间的先后来排序 
+--reverse 结果会以相反的顺序输出
+-h 更友好的方式显示 
+-a 列出所有文件包括隐藏文件
+
+	（5）
+file filename
+打印文件内容的简单描述
+
+less filename 
+查看文件的内容，可以前后滚动，按q可退出
+
+	（6）
+目录	评论
+/	根目录，万物起源。
+/bin	包含系统启动和运行所必须的二进制程序。
+/boot	包含 Linux 内核、初始 RAM 磁盘映像（用于启动时所需的驱动）和 启动加载程序。
+
+有趣的文件：
+/boot/grub/grub.conf or menu.lst， 被用来配置启动加载程序。
+/boot/vmlinuz，Linux 内核。
+/dev	这是一个包含设备结点的特殊目录。“一切都是文件”，也适用于设备。 在这个目录里，内核维护着所有设备的列表。
+/etc	这个目录包含所有系统层面的配置文件。
+它也包含一系列的 shell 脚本， 在系统启动时，这些脚本会开启每个系统服务。这个目录中的任何文件应该是可读的文本文件。
+
+有趣的文件：虽然/etc 目录中的任何文件都有趣，但这里只列出了一些我一直喜欢的文件：
+/etc/crontab， 定义自动运行的任务。
+/etc/fstab，包含存储设备的列表，以及与他们相关的挂载点。
+/etc/passwd，包含用户帐号列表。
+/home	在通常的配置环境下，系统会在/home 下，给每个用户分配一个目录。普通用户只能 在自己的目录下写文件。这个限制保护系统免受错误的用户活动破坏。
+/lib	包含核心系统程序所使用的共享库文件。这些文件与 Windows 中的动态链接库相似。
+/lost+found	每个使用 Linux 文件系统的格式化分区或设备，例如 ext3文件系统， 都会有这个目录。当部分恢复一个损坏的文件系统时，会用到这个目录。除非文件系统 真正的损坏了，那么这个目录会是个空目录。
+/media	在现在的 Linux 系统中，/media 目录会包含可移动介质的挂载点， 例如 USB 驱动器，CD-ROMs 等等。这些介质连接到计算机之后，会自动地挂载到这个目录结点下。
+/mnt	在早些的 Linux 系统中，/mnt 目录包含可移动介质的挂载点。
+/opt	这个/opt 目录被用来安装“可选的”软件。这个主要用来存储可能 安装在系统中的商业软件产品。
+/proc	这个/proc 目录很特殊。从存储在硬盘上的文件的意义上说，它不是真正的文件系统。 相反，它是一个由 Linux 内核维护的虚拟文件系统。它所包含的文件是内核的窥视孔。这些文件是可读的， 它们会告诉你内核是怎样监管计算机的。
+/root	root 帐户的家目录。
+/sbin	这个目录包含“系统”二进制文件。它们是完成重大系统任务的程序，通常为超级用户保留。
+/tmp	这个/tmp 目录，是用来存储由各种程序创建的临时文件的地方。一些配置导致系统每次 重新启动时，都会清空这个目录。
+/usr	在 Linux 系统中，/usr 目录可能是最大的一个。它包含普通用户所需要的所有程序和文件。
+/usr/bin	/usr/bin 目录包含系统安装的可执行程序。通常，这个目录会包含许多程序。
+/usr/lib	包含由/usr/bin 目录中的程序所用的共享库。
+/usr/local	这个/usr/local 目录，是非系统发行版自带，却打算让系统使用的程序的安装目录。 通常，由源码编译的程序会安装在/usr/local/bin 目录下。新安装的 Linux 系统中，会存在这个目录， 但却是空目录，直到系统管理员放些东西到它里面。
+/usr/sbin	包含许多系统管理程序。
+/usr/share	/usr/share 目录包含许多由/usr/bin 目录中的程序使用的共享数据。 其中包括像默认的配置文件、图标、桌面背景、音频文件等等。
+/usr/share/doc	大多数安装在系统中的软件包会包含一些文档。在/usr/share/doc 目录下， 我们可以找到按照软件包分类的文档。
+/var	除了/tmp 和/home 目录之外，相对来说，目前我们看到的目录是静态的，这是说， 它们的内容不会改变。/var 目录是可能需要改动的文件存储的地方。各种数据库，假脱机文件， 用户邮件等等，都位于在这里。
+/var/log	这个/var/log 目录包含日志文件、各种系统活动的记录。这些文件非常重要，并且 应该时时监测它们。其中最重要的一个文件是/var/log/messages。注意，为了系统安全，在一些系统中， 你必须是超级用户才能查看这些日志文件。
+
+	（7）
+通配符
+*	匹配任意多个字符（包括零个或一个）
+?	匹配任意一个字符（不包括零个）
+[characters]	匹配任意一个属于字符集中的字符
+[!characters]	匹配任意一个不是字符集中的字符
+[[:class:]]	匹配任意一个属于指定字符类中的字符
+
+常用字符类别：
+[:alnum:]	匹配任意一个字母或数字
+[:alpha:]	匹配任意一个字母
+[:digit:]	匹配任意一个数字
+[:lower:]	匹配任意一个小写字母
+[:upper:]	匹配任意一个大写字母
+
+	（8）
+mkdir directory 创建目录 mkdir dir1 dir2 dir3 创建三个目录
+
+	（9）
+cp file1 file2	
+复制文件 file1 内容到文件 file2。
+如果 file2 已经存在， file2 的内容会被 file1 的内容重写。如果 file2 不存在，则会创建 file2。
+
+cp -i file1 file2	
+这条命令和上面的命令一样，除了如果文件 file2 存在的话，在文件 file2 被重写之前， 会提示用户确认信息。
+
+cp file1 file2 dir1	
+复制文件 file1 和文件 file2 到目录 dir1。目录 dir1 必须存在。
+
+cp dir1/* dir2	
+使用一个通配符，在目录 dir1 中的所有文件都被复制到目录 dir2 中。 dir2 必须已经存在。
+
+cp -r dir1 dir2	
+复制目录 dir1 中的内容到目录 dir2。如果目录 dir2 不存在， 创建目录 dir2，操作完成后，目录 dir2 中的内容和 dir1 中的一样。 
+如果目录 dir2 存在，则目录 dir1 (和目录中的内容)将会被复制到 dir2 中。
+
+	（10）
+mv file1 file2	
+移动 file1 到 file2。
+如果 file2 存在，它的内容会被 file1 的内容重写。 如果 file2 不存在，则创建 file2。 每种情况下，file1 不再存在。
+
+mv -i file1 file2	
+除了如果 file2 存在的话，在 file2 被重写之前，用户会得到 提示信息外，这个和上面的选项一样。
+
+mv file1 file2 dir1	
+移动 file1 和 file2 到目录 dir1 中。dir1 必须已经存在。
+
+mv dir1 dir2	
+如果目录 dir2 不存在，创建目录 dir2，并且移动目录 dir1 的内容到 目录 dir2 中，同时删除目录 dir1。
+如果目录 dir2 存在，移动目录 dir1（及它的内容）到目录 dir2。
+
+	（11）
+rm file1	默默地删除文件
+rm -i file1	除了在删除文件之前，提示用户确认信息之外，和上面的命令作用一样。
+rm -r file1 dir1	删除文件 file1, 目录 dir1，及 dir1 中的内容。
+rm -rf file1 dir1	同上，除了如果文件 file1，或目录 dir1 不存在的话，rm 仍会继续执行。
+
+	（12）
+ln — 创建硬链接和符号链接
+
+ln file link 创建硬链接
+ln -s file line 创建软链接
+
+硬链接与更加现代的符号链接相比，硬链接是最初 Unix 创建链接的方式。每个文件默认会有一个硬链接， 这个硬链接给予文件名字。我们每创建一个硬链接，就为一个文件创建了一个额外的目录项。 硬链接有两个重要局限性：
+1、一个硬链接不能关联它所在文件系统之外的文件。这是说一个链接不能关联 与链接本身不在同一个磁盘分区上的文件。
+2、一个硬链接不能关联一个目录。
+
+当一个硬链接被删除时，这个链接 被删除，但是文件本身的内容仍然存在。
+符号链接类似于windows的快捷方式，如果你往一个符号链接里面写入东西，那么相关联的文件也被写入。
+然而， 当你删除一个符号链接时，只有这个链接被删除，而不是文件自身。
+如果先于符号链接 删除文件，这个链接仍然存在，但是不指向任何东西。在这种情况下，这个链接被称为坏链接。
+
+	（13）
+type command  显示命令的类型
+which command  显示一个可执行程序的位置
+ls --help   --help 选项，这个选项是显示命令所支持的语法和选项说明
+
+	（14）
+man command 查看命令的参考手册
+whatis command 显示非常简洁的命令说明
+info command info info文件是树型结构，分化为各个结点，每一个包含一个题目。
+whatis  command 显示非常简洁的命令说明
+alias name='command string' 给命令取别名
+
+	（15）
+ls -l /usr/bin > ls-output.txt 重定向输出
+less ls-output.txt 查看输出的内容
+ls -l /usr/bin >> ls-output.txt 使用”>>“重定向符，追加内容
+
+一个程序可以在几个编号的文件流中的任一个上产生输出。
+虽然我们已经将这些文件流的前 三个称作标准输入、输出和错误，shell 内部分别将其称为文件描述符0、1和2。
+shell 使用文件描述符提供 了一种表示法来重定向文件。因为标准错误和文件描述符2一样，我们用这种 表示法来重定向标准错误：
+
+	（16）
+cat movie.mpeg.0* > movie.mpeg 追加连接符合条件的文件
+
+	（17）
+ls -l /usr/bin | less 
+命令从标准输入读取数据并输送到标准输出的能力被一个称为管道线的shell特性所利用。
+
+管道中添加过滤器 sort
+ls /bin /usr/bin | sort | less
+
+	（18）
+wc（字计数）命令是用来显示文件所包含的行数、字数和字节数。
+例如：
+wc ls-output.txt
+7902 64566 503634 ls-output.txt
+
+	（19）
+grep pattern [file...] 找到匹配的文本
+
+ls /bin /usr/bin | sort | uniq | grep zip   区分大小写
+ls /bin /usr/bin | sort | uniq | grep -i zip 忽略大小写
+
+grep “standard” standard.txt > grep.out 2>&1
+在文件standard.txt中查找standard这个字符串，如果找到则将查找结果重定向到grep.out，如果找不到，则把错误信息重定向到grep.out中。
+
+	（20）
+head -n 5 ls-output.txt  查看开头五行内容
+tail -n 5 ls-output.txt 查看结尾五行内容
+
+	（21）
+波浪线字符(“~”)有特殊的含义。
+当它用在 一个单词的开头时，它会展开成指定用户的家目录名。
+如果没有指定用户名，则展开成当前用户的家目录。
+
+[me@linuxbox ~]$ echo ~foo
+/home/foo
+
+	（22）
+算术表达式展开使用这种格式：
+$((expression))
+
+[me@linuxbox ~]$ echo $((2 + 2))
+4
+
+在算术表达式中空格并不重要，并且表达式可以嵌套。
+[me@linuxbox ~] echo $(($((5**2)) * 3))
+75
+
+通过它，你可以从一个包含花括号的模式中 创建多个文本字符串。
+[me@linuxbox ~]$ echo Front-{A,B,C}-Back
+Front-A-Back Front-B-Back Front-C-Back
+
+[me@linuxbox ~]$ echo Number_{1..5}
+Number_1  Number_2  Number_3  Number_4  Number_5
+
+[me@linuxbox ~]$ echo {Z..A}
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+
+花括号嵌套：
+[me@linuxbox ~]$ echo a{A{1,2},B{3,4}}b
+aA1b aA2b aB3b aB4b
+
+批量创建以数值”年－月”形式命名的目录
+[me@linuxbox ~]$ mkdir Pics
+[me@linuxbox ~]$ cd Pics
+[me@linuxbox Pics]$ mkdir {2007..2009}-0{1..9} {2007..2009}-{10..12}
+[me@linuxbox Pics]$ ls
+2007-01 2007-07 2008-01 2008-07 2009-01 2009-07
+2007-02 2007-08 2008-02 2008-08 2009-02 2009-08
+2007-03 2007-09 2008-03 2008-09 2009-03 2009-09
+2007-04 2007-10 2008-04 2008-10 2009-04 2009-10
+2007-05 2007-11 2008-05 2008-11 2009-05 2009-11
+2007-06 2007-12 2008-06 2008-12 2009-06 2009-12
+
+	（23）
+命令替换允许我们把一个命令的输出作为一个展开模式来使用：
+[me@linuxbox ~]$ echo $(ls)
+Desktop Documents ls-output.txt Music Pictures Public Templates
+Videos
+
+bash 也支持这种语法。它使用倒引号来代替美元符号和括号：
+[me@linuxbox ~]$ ls -l `which cp`
+-rwxr-xr-x 1 root root 71516 2007-12-05 08:58 /bin/cp
+
+记住，在双引号中，参数展开、算术表达式展开和命令替换仍然有效：
+[me@linuxbox ~]$ echo "$USER $((2+2)) $(cal)"
+me 4    February 2008
+Su Mo Tu We Th Fr Sa
+
+	（24）
+以下例子是无引用，双引号，和单引号的比较结果：
+[me@linuxbox ~]$ echo text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
+text /home/me/ls-output.txt a b foo 4 me
+[me@linuxbox ~]$ echo "text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER"
+text ~/*.txt   {a,b} foo 4 me
+[me@linuxbox ~]$ echo 'text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER'
+text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
+
+反斜杠转义符
+[me@linuxbox ~]$ mv bad\&filename good_filename
+
+	（25）
+查看历史信息
+history | less
+
+历史命令执行
+!!	重复最后一次执行的命令。可能按下上箭头按键和 enter 键更容易些。
+!number	重复历史列表中第 number 行的命令。
+!string	重复最近历史列表中，以这个字符串开头的命令。
+!?string	重复最近历史列表中，包含这个字符串的命令。
+
+	（26）
+ps – 报告当前进程快照
+top – 显示任务
+jobs – 列出活跃的任务
+bg – 把一个任务放到后台执行
+fg – 把一个任务放到前台执行
+kill – 给一个进程发送信号
+killall – 杀死指定名字的进程
+shutdown – 关机或重启系统
+
+进程状态：
+R	运行中。这意味着，进程正在运行或准备运行。
+S	正在睡眠。进程没有运行，而是，正在等待一个事件， 比如说，一个按键或者网络分组。
+D	不可中断睡眠。进程正在等待 I/O，比方说，一个磁盘驱动器的 I/O。
+T	已停止. 已经指示进程停止运行。稍后介绍更多。
+Z	一个死进程或“僵尸”进程。这是一个已经终止的子进程，但是它的父进程还没有清空它。 （父进程没有把子进程从进程表中删除）
+<	一个高优先级进程。这可能会授予一个进程更多重要的资源，给它更多的 CPU 时间。 进程的这种属性叫做 niceness。
+具有高优先级的进程据说是不好的（less nice）， 因为它占用了比较多的 CPU 时间，这样就给其它进程留下很少时间。
+N	低优先级进程。 一个低优先级进程（一个“好”进程）只有当其它高优先级进程被服务了之后，才会得到处理器时间。
+
+另一个流行的选项组合是 “aux”（不带开头的”-“字符）。这会给我们更多信息：
+[me@linuxbox ~]$ ps aux
+USER   PID  %CPU  %MEM     VSZ    RSS  TTY   STAT   START   TIME  COMMAND
+root     1   0.0   0.0    2136    644  ?     Ss     Mar05   0:31  init
+root     2   0.0   0.0       0      0  ?     S&lt;     Mar05   0:00  [kt]
+
+用 top 命令动态查看进程
+
+	（27）
+后台执行:在程序命令之后，加上”&”字符
+[me@linuxbox ~]$ xlogo &
+[1] 28236
+
+后台命令对与键盘输入免疫，无法中断，使用fg将命令转到前端。
+fg 命令之后，跟随着一个百分号和任务序号（叫做 jobspec）就可以。
+[me@linuxbox ~]$ jobs
+[1]+ Running        xlogo &
+[me@linuxbox ~]$ fg %1
+xlogo
