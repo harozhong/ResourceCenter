@@ -10,7 +10,13 @@ sudo find / -iname "*opencv*" > ~/find.txt
 Linux查看系统剩余空间
 1.查看系统整体空间剩余情况
 df -h
+sudo fdisk -l
 2.查看每个文件夹的占用情况
 du -sh *
 3.查看当前文件夹下有多少文件
 ls |wc -l
+
+更新数据库文件(根据/etc/updatedb.conf 的设定去搜寻系统硬盘内的文件名,并更新 /var/lib/mlocate 内的数据库文件;)
+updatedb
+
+
