@@ -1,2 +1,2 @@
 Vmware启动Linux黑屏解决：
-以管理员身份打开cmd，运行  netsh winsock reset
+以管理员身份打开cmd，运行netsh winsock reset
