@@ -19,5 +19,6 @@ ls |wc -l
 更新数据库文件(根据/etc/updatedb.conf 的设定去搜寻系统硬盘内的文件名,并更新 /var/lib/mlocate 内的数据库文件;)
 updatedb
 
-
+利用g++编译器编译程序,并添加opencv库:
+g++ test.cpp -o ocvtest `pkg-config opencv --cflags --libs`
 
