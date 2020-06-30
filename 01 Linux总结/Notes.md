@@ -8,6 +8,9 @@
     - [<font color=Crimson size=4>MarkDown</font>](#font-colorcrimson-size4markdownfont)
     - [<font color=Crimson size=4>C++</font>](#font-colorcrimson-size4cfont)
         - [<font color=LightCoral size=4>1. int main(int argc,char* argv[])详解</font>](#font-colorlightcoral-size41-int-mainint-argcchar-argv详解font)
+    - [<font color=Crimson size=4>线程相关</font>](#font-colorcrimson-size4线程相关font)
+        - [<font color=LightCoral size=4>1. 线程信号量</font>](#font-colorlightcoral-size41-线程信号量font)
+        - [<font color=LightCoral size=4>2. 线程创建C语言示例</font>](#font-colorlightcoral-size42-线程创建c语言示例font)
     - [<font color=Crimson size=4>OpenCV</font>](#font-colorcrimson-size4opencvfont)
         - [<font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>](#font-colorlightcoral-size41-光流法calcopticalflowpyrlk使用语法font)
         - [<font color=LightCoral size=4>2. 光流法calcOpticalFlowFarneback()</font>](#font-colorlightcoral-size42-光流法calcopticalflowfarnebackfont)
@@ -79,7 +82,6 @@
 * `iconv -f gbk -t utf-8 安装密钥.txt -o 安装密钥1.txt`
 </td></tr></table>
 </details>
-
 <br>
 
 <font color=gray size=2>*[返回目录](#font-colorcrimson-size4目录font)*</font>
@@ -171,6 +173,70 @@ Markdown 当前文件夹下图片：
 
 ### <font color=LightCoral size=4>1. int main(int argc,char* argv[])详解</font>
 * [int main(int argc,char* argv[])详解](https://www.cnblogs.com/avril/archive/2010/03/22/1691477.html)
+
+*[返回目录](#font-colorcrimson-size4目录font)*
+
+-------------------------------------------------------------
+
+## <font color=Crimson size=4>线程相关</font>
+### <font color=LightCoral size=4>1. 线程信号量</font>
+* [信号量sem_init,sem_wait,sem_post](https://blog.csdn.net/u013457167/article/details/78318932)
+
+### <font color=LightCoral size=4>2. 线程创建C语言示例</font>
+<details>
+<summary>原文内容</summary>
+<table><tr><td bgcolor=DimGray>
+
+```C
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
+#include <semaphore.h>
+
+  sem_t sem;
+
+  void func1(void* arg)
+  {
+      for(int i=1;i<=10;i++)
+      {
+          sem_wait(&sem);
+          int *running=arg;
+          printf("pthread1--%d\n",i);
+          printf("%d\n",*running);
+      }
+  }
+
+  void func2(void* arg)
+  {
+      printf("pthread2\n");
+      sem_post(&sem);
+  }
+
+  int main()
+  {
+      sem_init(&sem,0,1);
+      pthread_t thread[2];
+      int a=5;
+      pthread_create(&(thread[0]),NULL,(void*)func1,(void*)&a);
+      printf("main thread 1\n");
+      sleep(3);
+      pthread_create(&(thread[1]),NULL,(void*)func2,(void*)&a);
+      printf("main thread 2\n");
+      printf("step3\n");
+      pthread_join(thread[1],NULL);
+      printf("step4\n");
+      pthread_join(thread[0],NULL);
+      printf("step5\n");
+      sem_destroy(&sem);
+      printf("step6\n");
+      return 0;
+  }
+
+```
+</td></tr></table>
+</details>
 
 *[返回目录](#font-colorcrimson-size4目录font)*
 
@@ -295,4 +361,5 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
+
 <kbd>cond(no)->op</kbd>
