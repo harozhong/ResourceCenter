@@ -1,19 +1,28 @@
 
-## <font color=Crimson size=4>目录</font>
+# <font color=Crimson size=4>目录</font>
 
 <!-- TOC -->
 
 - [<font color=Crimson size=4>目录</font>](#font-colorcrimson-size4目录font)
-- [<font color=Crimson size=4>Linux</font>](#font-colorcrimson-size4linuxfont)
-- [<font color=Crimson size=4>MarkDown</font>](#font-colorcrimson-size4markdownfont)
-- [<font color=Crimson size=4>OpenCV</font>](#font-colorcrimson-size4opencvfont)
-    - [<font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>](#font-colorlightcoral-size41-光流法calcopticalflowpyrlk使用语法font)
-    - [<font color=LightCoral size=4>2. 光流法calcOpticalFlowFarneback()</font>](#font-colorlightcoral-size42-光流法calcopticalflowfarnebackfont)
-    - [<font color=LightCoral size=4>3. 角点检测函数goodFeaturesToTrack</font>](#font-colorlightcoral-size43-角点检测函数goodfeaturestotrackfont)
-    - [<font color=LightCoral size=4>4. 移动目标检测</font>](#font-colorlightcoral-size44-移动目标检测font)
-- [<font color=Crimson size=4>VScode</font>](#font-colorcrimson-size4vscodefont)
-    - [<font color=LightCoral size=4>VScode教程</font>](#font-colorlightcoral-size4vscode教程font)
-- [图书](#图书)
+    - [<font color=Crimson size=4>Linux</font>](#font-colorcrimson-size4linuxfont)
+    - [<font color=Crimson size=4>MarkDown</font>](#font-colorcrimson-size4markdownfont)
+    - [<font color=Crimson size=4>C++</font>](#font-colorcrimson-size4cfont)
+        - [<font color=LightCoral size=4>1. int main(int argc,char* argv[])详解</font>](#font-colorlightcoral-size41-int-mainint-argcchar-argv详解font)
+    - [<font color=Crimson size=4>OpenCV</font>](#font-colorcrimson-size4opencvfont)
+        - [<font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>](#font-colorlightcoral-size41-光流法calcopticalflowpyrlk使用语法font)
+        - [<font color=LightCoral size=4>2. 光流法calcOpticalFlowFarneback()</font>](#font-colorlightcoral-size42-光流法calcopticalflowfarnebackfont)
+        - [<font color=LightCoral size=4>3. 角点检测函数goodFeaturesToTrack</font>](#font-colorlightcoral-size43-角点检测函数goodfeaturestotrackfont)
+        - [<font color=LightCoral size=4>4. 移动目标检测</font>](#font-colorlightcoral-size44-移动目标检测font)
+        - [<font color=LightCoral size=4>5. cvSetImageROI</font>](#font-colorlightcoral-size45-cvsetimageroifont)
+        - [<font color=LightCoral size=4>6. cvAddWeighted</font>](#font-colorlightcoral-size46-cvaddweightedfont)
+        - [<font color=LightCoral size=4>7. cvCreateImage</font>](#font-colorlightcoral-size47-cvcreateimagefont)
+        - [<font color=LightCoral size=4>8. cvResize</font>](#font-colorlightcoral-size48-cvresizefont)
+        - [<font color=LightCoral size=4>9. cvResize</font>](#font-colorlightcoral-size49-cvresizefont)
+        - [<font color=LightCoral size=4>10. Mat和IPLImage的区别</font>](#font-colorlightcoral-size410-mat和iplimage的区别font)
+        - [<font color=LightCoral size=4>11. CVMAT操作</font>](#font-colorlightcoral-size411-cvmat操作font)
+    - [<font color=Crimson size=4>VScode</font>](#font-colorcrimson-size4vscodefont)
+        - [<font color=LightCoral size=4>VScode教程</font>](#font-colorlightcoral-size4vscode教程font)
+    - [图书](#图书)
 
 <!-- /TOC -->
 
@@ -35,8 +44,11 @@
 * `sudo find / -iname "*opencv*" > ~/find.txt`
 
 **4. Linux查看系统剩余空间**
+
 1. 查看系统整体空间剩余情况
+
 * `df -h`
+
 * `sudo fdisk -l`
 2. 查看每个文件夹的占用情况
 * `du -sh *`
@@ -62,6 +74,9 @@
 
 **8. 终端打开文件(等同于双击)**
 * `xdg-open /data/Haro/学习/01编程/01C_C++/01书籍/C++谭浩强.pdf`
+
+**9. 从windows到linux的文本转码**
+* `iconv -f gbk -t utf-8 安装密钥.txt -o 安装密钥1.txt`
 </td></tr></table>
 </details>
 
@@ -69,7 +84,8 @@
 
 <font color=gray size=2>*[返回目录](#font-colorcrimson-size4目录font)*</font>
 
------------------------------------------------------------------
+---------------------------------------------------------------
+
 ## <font color=Crimson size=4>MarkDown</font>
 
 <details>
@@ -140,8 +156,7 @@ Markdown 当前文件夹下图片：
 <table><tr><td bgcolor=#333333>
 
 * [MARKDOWN中修改字体和颜色](https://blog.csdn.net/qq_35896136/article/details/104379671)
-
-
+* [MarkDown语法总结](https://www.cnblogs.com/linbudu/p/11367763.html)
 
 </td></tr></table>
 </details>
@@ -151,6 +166,16 @@ Markdown 当前文件夹下图片：
 *[返回目录](#font-colorcrimson-size4目录font)*
 
 -------------------------------------------------------------
+
+## <font color=Crimson size=4>C++</font>
+
+### <font color=LightCoral size=4>1. int main(int argc,char* argv[])详解</font>
+* [int main(int argc,char* argv[])详解](https://www.cnblogs.com/avril/archive/2010/03/22/1691477.html)
+
+*[返回目录](#font-colorcrimson-size4目录font)*
+
+-------------------------------------------------------------
+
 ## <font color=Crimson size=4>OpenCV</font>
 
 ### <font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>
@@ -211,11 +236,34 @@ void cv::calcOpticalFlowPyrLK ( InputArray prevImg,
 ### <font color=LightCoral size=4>4. 移动目标检测</font>
 * [光流法(optical flow)运动检测](https://blog.csdn.net/Lemon_jay/article/details/89476029)
 
+### <font color=LightCoral size=4>5. cvSetImageROI</font>
+* [利用cvSetImageROI截取/裁剪图片](https://blog.csdn.net/chentravelling/article/details/45331225)
+
+### <font color=LightCoral size=4>6. cvAddWeighted</font>
+* [OpenCV中cvAddWeighted和Alpha混合](https://blog.csdn.net/Augusdi/article/details/11523631)
+
+### <font color=LightCoral size=4>7. cvCreateImage</font>
+* [cvCreateImage函数说明](https://blog.csdn.net/breeze5428/article/details/30050327)
+
+### <font color=LightCoral size=4>8. cvResize</font>
+* [OpenCV中的图像尺寸调整cvResize](https://blog.csdn.net/dyzok88/article/details/41487925)
+
+### <font color=LightCoral size=4>9. cvResize</font>
+* [cvReleaseImage()函数说明](https://www.cnblogs.com/stemon/p/5037286.html)
+
+### <font color=LightCoral size=4>10. Mat和IPLImage的区别</font>
+* [Mat和IPLImage](https://blog.csdn.net/qq_37764129/article/details/81271660)
+
+### <font color=LightCoral size=4>11. CVMAT操作</font>
+* [CVMAT操作](https://www.cnblogs.com/mysunnyday/archive/2011/08/05/2128197.html)
+
+
+
 <br>
 
 *[返回目录](#font-colorcrimson-size4目录font)*
 
-------------------------------------
+---------------------------------------------------------------
 ## <font color=Crimson size=4>VScode</font>
 ### <font color=LightCoral size=4>VScode教程</font>
 * [linux系统下如何在vscode中调试C++代码](https://www.cnblogs.com/jiaxblog/p/9902535.html)
@@ -226,7 +274,7 @@ void cv::calcOpticalFlowPyrLK ( InputArray prevImg,
 
 *[返回目录](#font-colorcrimson-size4目录font)*
 
-------------------------------------
+---------------------------------------------------------------
 
 
 ## 图书
