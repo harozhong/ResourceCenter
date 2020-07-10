@@ -11,6 +11,12 @@
     - [<font color=Crimson size=4>线程相关</font>](#font-colorcrimson-size4线程相关font)
         - [<font color=LightCoral size=4>1. 线程信号量</font>](#font-colorlightcoral-size41-线程信号量font)
         - [<font color=LightCoral size=4>2. 线程创建C语言示例</font>](#font-colorlightcoral-size42-线程创建c语言示例font)
+    - [<font color=Crimson size=4>摄像机</font>](#font-colorcrimson-size4摄像机font)
+        - [<font color=LightCoral size=4>1. 摄像机标定</font>](#font-colorlightcoral-size41-摄像机标定font)
+        - [<font color=LightCoral size=4>2. 相机成像原理/四种坐标系</font>](#font-colorlightcoral-size42-相机成像原理四种坐标系font)
+        - [<font color=LightCoral size=4>3. 内\外参矩阵和畸变矩阵</font>](#font-colorlightcoral-size43-内\外参矩阵和畸变矩阵font)
+        - [<font color=LightCoral size=4>4. OPenCV相机标定函数ProjectPoints2</font>](#font-colorlightcoral-size44-opencv相机标定函数projectpoints2font)
+        - [<font color=LightCoral size=4>5. 相机标定之棋盘标定/各类函数</font>](#font-colorlightcoral-size45-相机标定之棋盘标定各类函数font)
     - [<font color=Crimson size=4>OpenCV</font>](#font-colorcrimson-size4opencvfont)
         - [<font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>](#font-colorlightcoral-size41-光流法calcopticalflowpyrlk使用语法font)
         - [<font color=LightCoral size=4>2. 光流法calcOpticalFlowFarneback()</font>](#font-colorlightcoral-size42-光流法calcopticalflowfarnebackfont)
@@ -20,9 +26,10 @@
         - [<font color=LightCoral size=4>6. cvAddWeighted</font>](#font-colorlightcoral-size46-cvaddweightedfont)
         - [<font color=LightCoral size=4>7. cvCreateImage</font>](#font-colorlightcoral-size47-cvcreateimagefont)
         - [<font color=LightCoral size=4>8. cvResize</font>](#font-colorlightcoral-size48-cvresizefont)
-        - [<font color=LightCoral size=4>9. cvResize</font>](#font-colorlightcoral-size49-cvresizefont)
+        - [<font color=LightCoral size=4>9. cvReleaseImage</font>](#font-colorlightcoral-size49-cvreleaseimagefont)
         - [<font color=LightCoral size=4>10. Mat和IPLImage的区别</font>](#font-colorlightcoral-size410-mat和iplimage的区别font)
         - [<font color=LightCoral size=4>11. CVMAT操作</font>](#font-colorlightcoral-size411-cvmat操作font)
+        - [<font color=LightCoral size=4>12. CV_MAT_ELEM</font>](#font-colorlightcoral-size412-cv_mat_elemfont)
     - [<font color=Crimson size=4>VScode</font>](#font-colorcrimson-size4vscodefont)
         - [<font color=LightCoral size=4>VScode教程</font>](#font-colorlightcoral-size4vscode教程font)
     - [图书](#图书)
@@ -64,7 +71,10 @@
 **6. 利用g++编译器编译程序,并添加opencv库:**
 * `` g++ test.cpp -o ocvtest `pkg-config opencv --cflags --libs` ``
 
-**7. 获取文件夹目录**
+**7. 利用g++编译器编译程序,并添加opencv库，并添加调试:**
+* `` g++ -g test.cpp -o ocvtest `pkg-config opencv --cflags --libs` ``
+
+**8. 获取文件夹目录**
 1. 获取当前文件夹目录
 * `$PWD`
 * `pwd`
@@ -75,10 +85,10 @@
 * `basename "$PWD"`
 * `` basename `pwd` ``
 
-**8. 终端打开文件(等同于双击)**
+**9. 终端打开文件(等同于双击)**
 * `xdg-open /data/Haro/学习/01编程/01C_C++/01书籍/C++谭浩强.pdf`
 
-**9. 从windows到linux的文本转码**
+**10. 从windows到linux的文本转码**
 * `iconv -f gbk -t utf-8 安装密钥.txt -o 安装密钥1.txt`
 </td></tr></table>
 </details>
@@ -242,6 +252,26 @@ Markdown 当前文件夹下图片：
 
 -------------------------------------------------------------
 
+## <font color=Crimson size=4>摄像机</font>
+
+### <font color=LightCoral size=4>1. 摄像机标定</font>
+* [单目摄像头标定与畸变矫正（C++，opencv）](https://zhuanlan.zhihu.com/p/55648494?utm_source=wechat_timeline)
+
+### <font color=LightCoral size=4>2. 相机成像原理/四种坐标系</font>
+* [相机成像原理：世界坐标系、相机坐标系、图像坐标系、像素坐标系之间的转换](https://blog.csdn.net/chentravelling/article/details/53558096)
+
+### <font color=LightCoral size=4>3. 内\外参矩阵和畸变矩阵</font>
+* [相机标定（1）内\外参矩阵和畸变矩阵](https://blog.csdn.net/qq_30815237/article/details/87530011)
+
+### <font color=LightCoral size=4>4. OPenCV相机标定函数ProjectPoints2</font>
+* [OPenCV相机标定函数](https://blog.csdn.net/haima1998/article/details/81056773)
+
+### <font color=LightCoral size=4>5. 相机标定之棋盘标定/各类函数</font>
+* [相机标定之棋盘标定](https://blog.csdn.net/qq_38241538/article/details/83152265)
+
+
+-------------------------------------------------------------
+
 ## <font color=Crimson size=4>OpenCV</font>
 
 ### <font color=LightCoral size=4>1. 光流法calcOpticalFlowPyrLK()使用语法:</font>
@@ -314,7 +344,7 @@ void cv::calcOpticalFlowPyrLK ( InputArray prevImg,
 ### <font color=LightCoral size=4>8. cvResize</font>
 * [OpenCV中的图像尺寸调整cvResize](https://blog.csdn.net/dyzok88/article/details/41487925)
 
-### <font color=LightCoral size=4>9. cvResize</font>
+### <font color=LightCoral size=4>9. cvReleaseImage</font>
 * [cvReleaseImage()函数说明](https://www.cnblogs.com/stemon/p/5037286.html)
 
 ### <font color=LightCoral size=4>10. Mat和IPLImage的区别</font>
@@ -323,7 +353,8 @@ void cv::calcOpticalFlowPyrLK ( InputArray prevImg,
 ### <font color=LightCoral size=4>11. CVMAT操作</font>
 * [CVMAT操作](https://www.cnblogs.com/mysunnyday/archive/2011/08/05/2128197.html)
 
-
+### <font color=LightCoral size=4>12. CV_MAT_ELEM</font>
+* [CV_MAT_ELEM——获取矩阵元素和初始化矩阵](https://blog.csdn.net/u010361581/article/details/9253039)
 
 <br>
 
@@ -334,7 +365,7 @@ void cv::calcOpticalFlowPyrLK ( InputArray prevImg,
 ### <font color=LightCoral size=4>VScode教程</font>
 * [linux系统下如何在vscode中调试C++代码](https://www.cnblogs.com/jiaxblog/p/9902535.html)
 * [Ubuntu16.04 中 Vscode 如何断点调试C语言程序](https://www.cnblogs.com/feiffy/p/8627812.html)
-
+* 调试要在编译时添加个<kbd>-g</kbd>命令
 
 <br>
 
