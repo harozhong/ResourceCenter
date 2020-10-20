@@ -1,0 +1,89 @@
+{
+  "main": {
+    "id": "22daf793a1eecbad",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a1fb9a440d74413",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Git基本操作.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c243c69b5f058521",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f8250253b127ea0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "596d39abb05cecde",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "42710c5369cd5310",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "815490feed4b10bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "1c1791161366c4bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "efe00a1462e6e5a4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Git基本操作.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "lastOpenFiles": [
+    "Git基本操作.md",
+    "06计算机系统/总线通信相关.md",
+    "06计算机系统/线程相关.md",
+    "Untitled.md",
+    "04OpenCV/OpenCV.md",
+    "05图像处理/图像处理.md",
+    "主页.md",
+    "05图像处理/车位号识别/车位号码识别.md",
+    "02Linux/Linux笔记.md",
+    "01C++/C++笔记.md"
+  ]
+}

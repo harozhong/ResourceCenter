@@ -13,7 +13,6 @@
         - [<font color=LightCoral size=4>4. 指针malloc分配空间与数组区别</font>](#font-colorlightcoral-size44-指针malloc分配空间与数组区别font)
         - [<font color=LightCoral size=4>5. 空指针和void *类型指针</font>](#font-colorlightcoral-size45-空指针和void-类型指针font)
         - [<font color=LightCoral size=4>6. C++ void*指针、多重指针void**和指针大小</font>](#font-colorlightcoral-size46-c-void指针多重指针void和指针大小font)
-        - [<font color=LightCoral size=4>7. srand(time(null))设置随机种子</font>](#font-colorlightcoral-size47-srandtimenull设置随机种子font)
     - [<font color=Crimson size=4>线程相关</font>](#font-colorcrimson-size4线程相关font)
         - [<font color=LightCoral size=4>1. 线程信号量</font>](#font-colorlightcoral-size41-线程信号量font)
         - [<font color=LightCoral size=4>2. 线程创建C语言示例</font>](#font-colorlightcoral-size42-线程创建c语言示例font)
@@ -47,11 +46,6 @@
         - [<font color=LightCoral size=4>16. getRotationMatrix2D的用法</font>](#font-colorlightcoral-size416-getrotationmatrix2d的用法font)
         - [<font color=LightCoral size=4>17. Mat类型数据创建总结</font>](#font-colorlightcoral-size417-mat类型数据创建总结font)
         - [<font color=LightCoral size=4>18. OTSU算法（大津法）</font>](#font-colorlightcoral-size418-otsu算法大津法font)
-        - [<font color=LightCoral size=4>19. Floodfill</font>](#font-colorlightcoral-size419-floodfillfont)
-        - [<font color=LightCoral size=4>20. equalizeHist（直方图均衡化）</font>](#font-colorlightcoral-size420-equalizehist直方图均衡化font)
-        - [<font color=LightCoral size=4>21. blur和GaussianBlur</font>](#font-colorlightcoral-size421-blur和gaussianblurfont)
-        - [<font color=LightCoral size=4>22. getRectSubPix()函数</font>](#font-colorlightcoral-size422-getrectsubpix函数font)
-        - [<font color=LightCoral size=4>23. getRotationMatrix2D函数介绍</font>](#font-colorlightcoral-size423-getrotationmatrix2d函数介绍font)
         - [<font color=LightCoral size=4>16. </font>](#font-colorlightcoral-size416-font)
     - [<font color=Crimson size=4>VScode</font>](#font-colorcrimson-size4vscodefont)
         - [<font color=LightCoral size=4>VScode教程</font>](#font-colorlightcoral-size4vscode教程font)
@@ -225,10 +219,6 @@ Markdown 当前文件夹下图片：
 
 ### <font color=LightCoral size=4>6. C++ void*指针、多重指针void**和指针大小</font>
 * [C++ void*指针、多重指针void**和指针大小](https://blog.csdn.net/Gordennizaicunzai/article/details/78007584)
-
-### <font color=LightCoral size=4>7. srand(time(null))设置随机种子</font>
-* [C++中的srand(time(null))利用时间设置随机种子产生随机数](https://blog.csdn.net/xinm1001/article/details/52032553)
-
 
 *[返回目录](#font-colorcrimson-size4目录font)*
 
@@ -455,22 +445,6 @@ layerSizes(0, 2) = responses.cols;
 * [OpenCV实现OTSU算法（大津法）](https://blog.csdn.net/Stone_Wang_MZ/article/details/107470417)
 * [用OpenCV实现Otsu算法](https://www.cnblogs.com/moon1992/p/5092726.html)
 
-### <font color=LightCoral size=4>19. Floodfill</font>
-* [水漫金山：OpenCV漫水填充算法（Floodfill）](https://blog.csdn.net/zhmxy555/article/details/28261997)
-* [floodFill详解](https://blog.csdn.net/weixin_42296411/article/details/80966724)
-
-### <font color=LightCoral size=4>20. equalizeHist（直方图均衡化）</font>
-* [equalizeHist 函数（直方图均衡化）](https://blog.csdn.net/liumoude6/article/details/77097728)
-
-### <font color=LightCoral size=4>21. blur和GaussianBlur</font>
-* [blur和GaussianBlur](https://blog.csdn.net/Li_haiyu/article/details/85784592)
-
-### <font color=LightCoral size=4>22. getRectSubPix()函数</font>
-* [opencv getRectSubPix()函数](https://blog.csdn.net/qq_27278957/article/details/88873066)
-
-### <font color=LightCoral size=4>23. getRotationMatrix2D函数介绍</font>
-* [getRotationMatrix2D函数介绍](https://blog.csdn.net/qq_27278957/article/details/88864928)
-
 <details>
 <summary>原文内容</summary>
 <table><tr><td bgcolor=DimGray>
@@ -527,6 +501,7 @@ Mat row = Img.rowRange(1,3).clone();
 * [Ubuntu16.04 中 Vscode 如何断点调试C语言程序](https://www.cnblogs.com/feiffy/p/8627812.html)
 * 调试要在编译时添加个<kbd>-g</kbd>命令
 
+<br>
 
 *[返回目录](目录)*
 
@@ -537,6 +512,7 @@ Mat row = Img.rowRange(1,3).clone();
 * [CANoe学习4—CAPL语言设计](https://zhuanlan.zhihu.com/p/128060866)
 
 
+<br>
 
 *[返回目录](#font-colorcrimson-size4目录font)*
 
@@ -551,7 +527,6 @@ Mat row = Img.rowRange(1,3).clone();
 
 * xdg-open /data/Haro/学习/01编程/01C_C++/01书籍/C++谭浩强[pdf]
 
-[pdf]:fdhf
 
 ```mermaid
 flowchat

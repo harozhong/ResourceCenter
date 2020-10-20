@@ -1,0 +1,23 @@
+{
+  "theme": "moonstone",
+  "pluginEnabledStatus": {
+    "file-explorer": true,
+    "global-search": true,
+    "switcher": true,
+    "graph": true,
+    "backlink": true,
+    "command-palette": true,
+    "markdown-importer": true,
+    "word-count": true,
+    "custom-css": true,
+    "page-preview": true,
+    "daily-notes": true,
+    "zk-prefixer": true,
+    "outline": false,
+    "random-note": false
+  },
+  "foldIndent": true,
+  "showLineNumber": true,
+  "foldHeading": true,
+  "promptDelete": false
+}
